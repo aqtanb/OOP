@@ -1,8 +1,7 @@
 package lab1.problem4;
 
-import practice2.Student;
-
 import java.util.ArrayList;
+import practice2.Student;
 
 class GradeBook {
     private Course course;
@@ -21,42 +20,39 @@ class GradeBook {
     }
 
     public void displayMessage() {
-        System.out.println("Welcome to the grade book for " + course.getCourseName() + "!\n");
+        System.out.println("Welcome to the grade book for " + course.getCourseName() + "\n");
     }
 
     public void displayGradeReport() {
         double total = 0;
         int lowest = Integer.MAX_VALUE;
         int highest = Integer.MIN_VALUE;
-        String lowestStudent = "", highestStudent = "";
+        Student lowestStudent = null, highestStudent = null;
 
-        System.out.println("Grades for students:");
         for (int i = 0; i < students.size(); i++) {
             Student student = students.get(i);
             int grade = grades.get(i);
-            System.out.println(student.getName() + " (ID: " + student.getId() + "): " + grade);
             total += grade;
 
             if (grade < lowest) {
                 lowest = grade;
-                lowestStudent = student.getName();
+                lowestStudent = student;
             }
             if (grade > highest) {
                 highest = grade;
-                highestStudent = student.getName();
+                highestStudent = student;
             }
         }
 
         double average = total / students.size();
-        System.out.println("\nClass average is " + determineClassAverage() +
-                ". Lowest grade is " + lowest + " " + lowestStudent.toString() +
-                " Highest grade is " + highest + " " + highestStudent.toString());
+        System.out.println("\nClass average is " + determineClassAverage() + ". Lowest grade is " +
+                lowest + lowestStudent.toString() + " Highest grade is " + highest + highestStudent.toString());
 
         outputBarChart();
     }
 
     private void outputBarChart() {
-        int[] distribution = new int[11];
+        int[] distribution = new int[10];
 
         for (int grade : grades) {
             distribution[grade / 10]++;
@@ -78,10 +74,5 @@ class GradeBook {
             total += grade;
         }
         return total / grades.size();
-    }
-
-    @Override
-    public String toString() {
-        return students + " " + grades;
     }
 }

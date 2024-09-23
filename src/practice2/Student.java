@@ -1,8 +1,8 @@
 package practice2;
 
 public class Student {
-    private String name;
-    private int id;
+    private final String name;
+    private final int id;
     private int yearOfStudy;
 
     public Student(String name, int id) {
@@ -29,6 +29,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student: " + name;
+        return "(Student " + name + ", id: " + id  + ")";
     }
 }

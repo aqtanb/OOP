@@ -2,7 +2,8 @@ package lab1.problem5;
 
 import java.util.Vector;
 
-class DragonLaunch {
+public class DragonLaunch {
+
     private Vector<Person> kidnappedPeople;
 
     public DragonLaunch() {
@@ -13,22 +14,20 @@ class DragonLaunch {
         kidnappedPeople.add(p);
     }
 
-    public boolean willDragonEatOrNot() {
-        int count = 0;
-
-        for (Person person : kidnappedPeople) {
-            if (person.getGender() == Gender.BOY) {
-                count++;
+    public Boolean willDragonEatOrNot() {
+        int counter = 0;
+        for (Person person: kidnappedPeople) {
+            if (person.gender == Gender.BOY) {
+                counter++;
             } else {
-                if (count > 0) {
-                    count--;
+                if (counter > 0) {
+                    counter--;
                 } else {
                     return true;
                 }
             }
         }
-
-        return count != 0;
+        return false;
     }
-}
 
+}

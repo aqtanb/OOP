@@ -1,6 +1,5 @@
 package lab1.problem2;
 
-
 public class TestComputerComponent {
     public static void main(String[] args) {
         ComputerComponent component1 = new ComputerComponent("Intel", ComponentType.RAM);

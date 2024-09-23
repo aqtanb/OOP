@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Analyzer {
     public static void main(String[] args) {
-        Data data = new Data();
         Scanner scanner = new Scanner(System.in);
         String input = "";
+        Data data = new Data();
+
         while (!input.equals("Q")) {
             System.out.print("Enter number (Q to quit): ");
             input = scanner.next();
@@ -20,7 +21,9 @@ public class Analyzer {
                 }
             }
         }
-        System.out.println("Average: " + data.getAverage());
-        System.out.println("Maximum = " + data.getMaximum());
+        System.out.print("Average = ");
+        System.out.println(data.getAverage());
+        System.out.print("Maximum = ");
+        System.out.println(data.getMaximum());
     }
 }

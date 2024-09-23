@@ -4,13 +4,13 @@ public class Course {
     private String courseName;
     private int credits;
     private String prerequisite;
-    private String description;  // Add description for the Course
+    private String description;
 
     public Course(String courseName, int credits, String prerequisite, String description) {
         this.courseName = courseName;
         this.credits = credits;
         this.prerequisite = prerequisite;
-        this.description = description;  // Initialize the course description
+        this.description = description;
     }
 
     public String getCourseName() {
@@ -31,9 +31,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return courseName + " (" + credits + " credits), Prerequisite: " + prerequisite +
-                ", Description: " + description;
+        return courseName + " " + credits + " credits, Prerequisite: " + prerequisite + ", Description: " + description;
     }
 }
-
-

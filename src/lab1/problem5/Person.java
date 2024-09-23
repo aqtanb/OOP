@@ -1,18 +1,19 @@
 package lab1.problem5;
 
-class Person {
-private Gender gender;
+public class Person {
+    Gender gender;
 
-public Person(Gender gender) {
-    this.gender = gender;
-}
 
-public Gender getGender() {
-    return gender;
-}
+    public Person(Gender gender) {
+        this.gender = gender;
+    }
 
-@Override
-public String toString() {
-    return gender.name();
-}
+    public Gender getGender() {
+        return gender;
+    }
+
+    @Override
+    public String toString() {
+        return gender.name();
+    }
 }
