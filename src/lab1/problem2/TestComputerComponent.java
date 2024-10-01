@@ -1,4 +1,5 @@
-package lab1.problemtwo;
+package lab1.problem2;
+
 
 public class TestComputerComponent {
     public static void main(String[] args) {

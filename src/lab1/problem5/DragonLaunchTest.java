@@ -6,7 +6,7 @@ public class DragonLaunchTest {
 
         dragonLaunch.kidnap(new Person(Gender.BOY));
         dragonLaunch.kidnap(new Person(Gender.BOY));
-        dragonLaunch.kidnap(new Person(Gender.GIRL));
+        dragonLaunch.kidnap(new Person(Gender.BOY));
         dragonLaunch.kidnap(new Person(Gender.GIRL));
 
         System.out.println("Will the dragon eat? " + dragonLaunch.willDragonEatOrNot());

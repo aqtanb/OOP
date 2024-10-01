@@ -1,4 +1,5 @@
 package lab1.problem5;
 
-public enum Gender {
+enum Gender {
+    BOY, GIRL
 }

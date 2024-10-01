@@ -1,6 +1,5 @@
-package lab1;
+package lab1.problem1;
 
-import java.util.Scanner;
 
 public class Data {
     private double sum;
@@ -12,23 +11,19 @@ public class Data {
         count = 0;
     }
 
-    void add() {
-        Scanner scanner = new Scanner(System.in);
-        String input = "";
-        while (!input.equals("Q")) {
-            input = scanner.next();
-            int number;
-            try {
-                number = Integer.parseInt(input);
-                sum += number;
-                count++;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input, you have to enter a number.");
-            }
+    void add(int number) {
+        count++;
+        sum += number;
+        if (maximum < number) {
+            maximum = number;
         }
     }
 
+    public double getAverage() {
+        return count == 0 ? 0 : sum / count;
+    }
 
-
-
+    public double getMaximum() {
+        return maximum;
+    }
 }

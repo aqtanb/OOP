@@ -1,4 +1,4 @@
-package lab1.problemtwo;
+package lab1.problem2;
 
 public class ComputerComponent {
     public static final int WARRANTY_YEARS = 3;
