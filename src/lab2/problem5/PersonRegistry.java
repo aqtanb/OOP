@@ -17,9 +17,7 @@ public class PersonRegistry {
     public List<Person> findPeopleWithPets() {
         List<Person> peopleWithPets = new ArrayList<>();
         for (Person person : people) {
-            if(person.hasPet()) {
-                peopleWithPets.add(person);
-            }
+            if(person.hasPet()) peopleWithPets.add(person);
         }
         return peopleWithPets;
     }
@@ -27,9 +25,7 @@ public class PersonRegistry {
     public List<Person> findPeopleWithoutPets() {
         List<Person> peopleWithPets = new ArrayList<>();
         for (Person person : people) {
-            if(!person.hasPet()) {
-                peopleWithPets.add(person);
-            }
+            if(!person.hasPet()) peopleWithPets.add(person);
         }
         return peopleWithPets;
     }

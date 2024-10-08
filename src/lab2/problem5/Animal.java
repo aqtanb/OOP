@@ -8,9 +8,7 @@ public abstract class Animal {
         this.age = age;
     }
 
-    public Animal() {
-
-    }
+    public Animal() {}
 
     abstract String getSound();
 

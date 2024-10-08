@@ -4,7 +4,7 @@ package lab2.problem5;
 import javax.lang.model.type.NullType;
 import java.util.Objects;
 
-public class Person {
+public abstract class Person {
     private final String name;
     private int age;
     private Animal animal;
@@ -38,12 +38,10 @@ public class Person {
         }
     }
 
+    public abstract String getOccupation();
+
     public int hashCode() {
         return Objects.hash(name, age);
-    }
-
-    public String toString() {
-        return this.name + " " + this.age;
     }
 
     public void leavePetWith(Person alice) {
