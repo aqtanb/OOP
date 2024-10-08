@@ -21,6 +21,7 @@ public class Series extends Circuit {
 
     @Override
     public void applyPotentialDiff(double V) {
+
         nodeFirst.applyPotentialDiff(V * (nodeFirst.getResistance() / getResistance()));
         nodeSecond.applyPotentialDiff(V * (nodeSecond.getResistance() / getResistance()));
     }
