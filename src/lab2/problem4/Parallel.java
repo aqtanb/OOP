@@ -3,6 +3,8 @@ package lab2.problem4;
 public class Parallel extends Circuit {
     Circuit nodeFirst;
     Circuit nodeSecond;
+    double totalResistance;
+    double totalDifference;
 
     public Parallel(Circuit first, Circuit second) {
         this.nodeFirst = first;
@@ -11,17 +13,20 @@ public class Parallel extends Circuit {
 
     @Override
     public double getResistance() {
-        return 1 / (1 / nodeFirst.getResistance() + 1 / nodeSecond.getResistance());
+        double firstResistance = nodeFirst.getResistance();
+        double secondResistance = nodeSecond.getResistance();
+        totalResistance =  firstResistance * secondResistance / (firstResistance + secondResistance);
+        return totalResistance;
     }
 
     @Override
     public double getPotentialDiff() {
-        return nodeFirst.getPotentialDiff();
+        totalDifference = nodeFirst.getPotentialDiff();
+        return totalDifference;
     }
 
     @Override
     public void applyPotentialDiff(double V) {
-        nodeFirst.applyPotentialDiff(V);
-        nodeSecond.applyPotentialDiff(V);
+        totalDifference = V;
     }
 }

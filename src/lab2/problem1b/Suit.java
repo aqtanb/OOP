@@ -1,5 +1,5 @@
 package lab2.problem1b;
 
-public enum Suit {
+enum Suit {
     CLOVER, DIAMOND, HEART, SPADE
 }

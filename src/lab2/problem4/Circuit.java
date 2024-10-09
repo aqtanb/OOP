@@ -9,6 +9,11 @@ public abstract class Circuit {
     }
     public double getCurrent() {
         return getPotentialDiff() / getResistance();
-
     }
+
+    @Override
+    public String toString() {
+        return "Resistance: " + getResistance() + ", difference: " + getPotentialDiff();
+    }
+
 }

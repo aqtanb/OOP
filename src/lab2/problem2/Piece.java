@@ -6,4 +6,9 @@ public abstract class Piece {
         this.start = start;
     }
     public abstract boolean isLegalMove(Position end);
+
+    @Override
+    public String toString() {
+        return "Start position: " + start.getVertical() + ", " + start.getHorizontal();
+    }
 }

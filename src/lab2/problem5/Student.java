@@ -1,5 +1,7 @@
 package lab2.problem5;
 
+import java.util.Objects;
+
 public class Student extends Person {
     private String major;
 
@@ -8,9 +10,11 @@ public class Student extends Person {
         this.major = major;
     }
 
+    public Student() {}
+
     @Override
-    public String getOccupation() {
-        return "Student, Major: " + major;
+    public String getOccupation(Person person) {
+        return "Student";
     }
 
     public String getMajor() {
@@ -29,14 +33,13 @@ public class Student extends Person {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof Student)) return false;
+        if (!(obj instanceof Student student)) return false;
         if (!super.equals(obj)) return false;
-        Student student = (Student) obj;
         return major.equals(student.major);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode() + major.hashCode();
+        return super.hashCode() + Objects.hash(major);
     }
 }

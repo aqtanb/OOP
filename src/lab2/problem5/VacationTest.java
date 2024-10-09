@@ -4,7 +4,7 @@ public class VacationTest {
     public static void main(String[] args) {
         Person john = new Employee("John", 30, "Engineer");
         Person alice = new PHDStudent("Alice", 26, "Comp. Science", "AI");
-        Animal murka = new Cat("Murka", 5);
+        Animal murka = new Cat("Murka", 5, "Pamirian");
         john.assignPet(murka);
         PersonRegistry registry = new PersonRegistry();
         registry.addPerson(john);

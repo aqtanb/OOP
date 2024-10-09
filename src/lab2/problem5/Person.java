@@ -1,11 +1,9 @@
 package lab2.problem5;
 
-
-import javax.lang.model.type.NullType;
 import java.util.Objects;
 
 public abstract class Person {
-    private final String name;
+    private String name;
     private int age;
     private Animal animal;
 
@@ -14,8 +12,14 @@ public abstract class Person {
         this.age = age;
     }
 
+    public Person() {}
+
     public void assignPet(Animal animal) {
         this.animal = animal;
+    }
+
+    public Animal getAnimal() {
+        return animal;
     }
 
     public void removePet() {
@@ -26,25 +30,40 @@ public abstract class Person {
         return this.animal != null;
     }
 
-    public void getOccupation(Person occupator) {
-        occupator.assignPet(this.animal);
-        this.removePet();
-    }
+    public abstract String getOccupation(Person person);
 
-    public void retrievePetFrom(Person occupator) {
-        if(!this.hasPet() && occupator.hasPet()) {
-            this.assignPet(occupator.animal);
-            occupator.removePet();
+    public void leavePetWith(Person person) {
+        if (!this.hasPet()) {
+            throw new IllegalArgumentException("You dont have a pet");
+        } else {
+            person.assignPet(this.animal);
+            this.removePet();
         }
     }
 
-    public abstract String getOccupation();
-
-    public int hashCode() {
-        return Objects.hash(name, age);
+    public void retrievePetFrom(Person person) {
+        if (!person.hasPet()) {
+            throw new IllegalArgumentException("This person doesnt have a pet");
+        } else {
+            this.assignPet(person.animal);
+            person.removePet();
+        }
     }
 
-    public void leavePetWith(Person alice) {
-        alice.assignPet(this.animal);
+
+    @Override
+    public String toString() {
+        return "Name: " + name + " , age: " + age + ", has an animal: " + (hasPet() ? "yes" : "no");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Person other)) return false;
+        return Objects.equals(this.name, other.name) && this.age == other.age && Objects.equals(this.animal, other.animal);
+    }
+
+    public int hashCode() {
+        return Objects.hash(name, age, animal);
     }
 }
