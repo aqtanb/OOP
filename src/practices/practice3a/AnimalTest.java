@@ -1,4 +1,4 @@
-package practice3a;
+package practices.practice3a;
 
 public class AnimalTest {
     public static void main(String[] args) {

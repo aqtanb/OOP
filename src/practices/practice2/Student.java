@@ -1,4 +1,4 @@
-package practice2;
+package practices.practice2;
 
 public class Student {
     private final String name;

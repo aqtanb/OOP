@@ -1,6 +1,6 @@
 package lab1.problem4;
 
-import practice2.Student;
+import practices.practice2.Student;
 
 import java.util.Scanner;
 import java.util.Vector;

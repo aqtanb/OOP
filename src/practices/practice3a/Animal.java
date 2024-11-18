@@ -1,4 +1,4 @@
-package practice3a;
+package practices.practice3a;
 
 // Base class
 class Animal {

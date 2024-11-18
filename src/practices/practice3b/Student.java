@@ -1,4 +1,4 @@
-package practice3b;
+package practices.practice3b;
 
 public class Student extends Person {
     private String program;

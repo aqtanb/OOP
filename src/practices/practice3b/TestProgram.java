@@ -1,4 +1,4 @@
-package practice3b;
+package practices.practice3b;
 
 import java.util.HashSet;
 import java.util.Scanner;
