@@ -19,6 +19,17 @@ class MyArrayList<E> implements MyCollection<E> {
     }
 
     @Override
+    public boolean addAll(MyCollection<E> otherCollection) {
+        boolean modified = false;
+        for (E element : otherCollection) {
+            if (add(element)) {
+                modified = true;
+            }
+        }
+        return modified;
+    }
+
+    @Override
     public boolean remove(E element) {
         for (int i = 0; i < size; i++) {
             if (elements[i].equals(element)) {

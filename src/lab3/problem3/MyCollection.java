@@ -1,10 +1,11 @@
 package lab3.problem3;
 
-import java.util.Comparator;
 
 public interface MyCollection<E> extends Iterable<E> {
 
     boolean add(E element);
+
+    boolean addAll(MyCollection<E> elements);
 
     boolean remove(E element);
 

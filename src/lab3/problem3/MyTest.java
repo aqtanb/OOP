@@ -1,7 +1,5 @@
 package lab3.problem3;
 
-import java.util.Comparator;
-
 public class MyTest {
     public static void main(String[] args) {
         MyCollection<Integer> myCollection = new MyArrayList<>();
@@ -19,5 +17,13 @@ public class MyTest {
 
         myCollection.remove(3);
         System.out.println( myCollection.size());
+
+        MyCollection<Integer> secondCollection = new MyArrayList<>();
+        secondCollection.add(5);
+        secondCollection.add(8);
+        secondCollection.add(88888888);
+        secondCollection.addAll(myCollection);
+        System.out.println(secondCollection.size());
+
     }
 }
