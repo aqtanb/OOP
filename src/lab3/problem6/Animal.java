@@ -2,7 +2,7 @@ package lab3.problem6;
 
 import java.util.Objects;
 
-public abstract class Animal implements Cloneable {
+public abstract class Animal implements Cloneable, AnimalActions {
     private int age;
     private String name;
     private boolean isHardToMaintain;
@@ -54,4 +54,20 @@ public abstract class Animal implements Cloneable {
             throw new CloneNotSupportedException("Aged animals can't be currently cloned");
         }
     }
+
+    @Override
+    public void move() {
+        System.out.println("The animal moves");
+    }
+
+    @Override
+    public void communicate() {
+        System.out.println("The animal communicates");
+    }
+
+    @Override
+    public void reproduce() {
+        System.out.println("The animal reproduces");
+    }
+
 }

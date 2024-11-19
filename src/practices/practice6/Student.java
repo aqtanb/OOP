@@ -1,4 +1,4 @@
-package practice6;
+package practices.practice6;
 
 public class Student extends Person
 implements CanHaveParty, CanHaveRetake, CanHavePizza{

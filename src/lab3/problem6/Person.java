@@ -2,7 +2,7 @@ package lab3.problem6;
 
 import java.util.Objects;
 
-public abstract class Person implements Comparable<Person>, Ownership {
+public abstract class Person implements Comparable<Person> {
     private String name;
     private int age;
     private Animal animal;
@@ -75,31 +75,4 @@ public abstract class Person implements Comparable<Person>, Ownership {
     public int compareTo(Person other) {
         return Integer.compare(this.age, other.age);
     }
-
-
-    @Override
-    public void adoptPet(Animal animal) {
-        this.animal = animal;
-        System.out.println(name + " has adopted a pet: " + animal.getName());
-    }
-
-    @Override
-    public void giveAwayPet(Animal animal) {
-        if (this.animal == animal) {
-            this.animal = null;
-            System.out.println(name + " has given away their pet: " + animal.getName());
-        } else {
-            System.out.println(name + " doesn't own this pet.");
-        }
-    }
-
-    @Override
-    public void takeCareOfPet() {
-        if (animal != null) {
-            System.out.println(name + " is taking care of their pet: " + animal.getName());
-        } else {
-            System.out.println(name + " has no pet to take care of.");
-        }
-    }
-
 }

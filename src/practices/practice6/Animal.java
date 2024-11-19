@@ -1,4 +1,4 @@
-package practice6;
+package practices.practice6;
 
 import java.util.Objects;
 
